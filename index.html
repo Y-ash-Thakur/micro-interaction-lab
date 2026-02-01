@@ -106,7 +106,10 @@
     const image = document.getElementById('image');
     const text = document.getElementById('text');
 
-
+    // Preload the success gif
+    const successGifUrl = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXBkYWo4ODJrYWh0MjAzN2thMWt6djgyb20yYm40azJjODZ1eWt4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif";
+    const preloadImage = new Image();
+    preloadImage.src = successGifUrl;
 
     let speedMultiplier = 1;
 
@@ -131,7 +134,7 @@
 
     yesBtn.addEventListener('click', () => {
       text.innerText = "Yayyyyy! I knew it My Kuchupuchuuuuu!!😚❤️";
-      image.src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXBkYWo4ODJrYWh0MjAzN2thMWt6djgyb20yYm40azJjODZ1eWt4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif"
+      image.src = successGifUrl;
       noBtn.style.display = 'none';
       yesBtn.style.display = 'none';
     });
