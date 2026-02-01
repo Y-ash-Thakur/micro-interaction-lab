@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine?</title>
+
+    <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff5f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    img {
+      width: 220px;
+      max-width: 80%;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 60px;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      outline: none;
+    }
+
+    button:focus,
+    button:active {
+      outline: none;
+      box-shadow: none;
+      transform: none;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.05);
+    }
+
+    #noBtn {
+      background: white;
+      color: #333;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <img id="image" src="" alt="cute">
+    <h1 id="text">Will you be my Valentine Sweetheart ?❤️</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">YES ❤️😚</button>
+      <button id="noBtn">NO 🙂👊🏻</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const image = document.getElementById('image');
+    const text = document.getElementById('text');
+
+
+
+    let speedMultiplier = 1;
+
+    function moveNoButton() {
+      noBtn.style.position = 'fixed'; // Switch to fixed position to use viewport coordinates
+
+      speedMultiplier += 0.2
+      const padding = 20;
+
+      const maxX = window.innerWidth - noBtn.offsetWidth - padding;
+      const maxY = window.innerHeight - noBtn.offsetHeight - padding;
+
+      const randomX = Math.max(0, Math.random() * maxX);
+      const randomY = Math.max(0, Math.random() * maxY);
+
+      noBtn.style.left = `${randomX}px`;
+      noBtn.style.top = `${randomY}px`;
+    }
+
+    noBtn.addEventListener("mouseenter", moveNoButton);
+    noBtn.addEventListener("click", moveNoButton);
+
+    yesBtn.addEventListener('click', () => {
+      text.innerText = "Yayyyyy! I knew it My Kuchupuchuuuuu!!😚❤️";
+      image.src = 
+      noBtn.style.display = 'none';
+      yesBtn.style.display = 'none';
+    });
+
+  </script>
+   
+</body>
+</html>
